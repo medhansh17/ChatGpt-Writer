@@ -24,7 +24,7 @@ This Chrome extension assists LinkedIn users by generating responses to messages
 ## Edge Cases Handled
 
 - Prompts longer than 100 characters are truncated.
-- The text area in the modal grows dynamically as more text is entered.
+- The text area in the modal grows dynamically till a certain height as more text is entered.
 - The modal closes when clicking outside of it.
 
 ## Technologies Used
@@ -32,3 +32,8 @@ This Chrome extension assists LinkedIn users by generating responses to messages
 - **[WXT Framework](https://wxt.dev/)**: Demonstrates the ability to learn and apply new frameworks quickly.
 - **React with TypeScript**: Provides type-safe, component-based structure.
 - **Tailwind CSS**: Used for efficient, utility-first styling.
+  
+
+
+https://github.com/user-attachments/assets/4261195c-24e7-4a6a-9ef3-3bb52eaa8eb8
+
