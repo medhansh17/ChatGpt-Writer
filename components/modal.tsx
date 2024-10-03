@@ -25,9 +25,9 @@ const PromptModal: React.FC<PromptModalProps> = ({
   const [generated, setGenerated] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [isPromptExpanded, setIsPromptExpanded] = useState(false);
-
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  // Auto resize textarea
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
@@ -46,7 +46,7 @@ const PromptModal: React.FC<PromptModalProps> = ({
       setInputValue("");
     }
   };
-
+  // Insert the message into the chat input field when the "Insert" button is clicked
   const handleInsertClick = () => {
     setModalVisible(false);
     const messageElement = document.querySelector<HTMLElement>(
@@ -79,6 +79,7 @@ const PromptModal: React.FC<PromptModalProps> = ({
 
   const togglePromptExpansion = () => setIsPromptExpanded(!isPromptExpanded);
 
+  // Truncate prompt if it exceeds the maximum length(100 characters)
   const truncatePrompt = (text: string, maxLength: number) =>
     text.length <= maxLength ? text : `${text.slice(0, maxLength)}...`;
 
@@ -88,7 +89,7 @@ const PromptModal: React.FC<PromptModalProps> = ({
         className={`modal flex flex-col bg-white p-4 rounded-lg shadow-2xl fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[9999] max-w-[500px] w-[90%] ${
           modalVisible ? "block" : "hidden"
         }`}
-        style={{ maxHeight: "60vh", overflowY: "auto" }}
+        style={{ maxHeight: "60vh", overflowY: "auto" }} // Limit height and add scrollbar
       >
         {generated && (
           <div className="chat-area flex flex-col w-[450px] py-4 gap-y-4">
@@ -120,7 +121,7 @@ const PromptModal: React.FC<PromptModalProps> = ({
           className="text-[#666D80] text-[15px] p-2 w-full border border-[#C1C7D0] rounded-lg resize-none overflow-y-auto no-scrollbar"
           placeholder="Your prompt"
           rows={1}
-          style={{ minHeight: "4rem", maxHeight: "150px" }}
+          style={{ minHeight: "4rem", maxHeight: "150px" }} 
         />
 
         <div className="second-button flex justify-end items-center mt-4">

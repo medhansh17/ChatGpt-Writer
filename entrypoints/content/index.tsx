@@ -5,9 +5,10 @@ import "../../assets/main.css";
 
 export default defineContentScript({
   matches: ["*://*/*"],
-  cssInjectionMode: "ui",
+  cssInjectionMode: "ui", // Inject CSS in the UI layer
   async main(ctx) {
     const ui = await createShadowRootUi(ctx, {
+      // Create a shadow root UI layer for the extension
       name: "language-learning-content-box",
       position: "inline",
       onMount: (container) => {

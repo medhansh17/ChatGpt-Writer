@@ -1,3 +1,5 @@
+// Added popup for the extension
+
 function App() {
   return (
     <div className="flex flex-col items-center justify-center w-fit h-fit p-4 bg-gray-100">

@@ -3,11 +3,12 @@ import PromptModal from "../../components/modal";
 import StickyIcon from "../../assets/Icon.svg";
 
 const App = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // state to manage modal visibility
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  // Create sticky icon to open modal on click
   const createIcon = () => {
     const Icon = document.createElement("img");
     Icon.addEventListener("click", openModal);
@@ -24,6 +25,7 @@ const App = () => {
     return Icon;
   };
 
+  // functions to add and remove sticky icon
   const insertStickyIcon = () => {
     const messageInput = document.querySelector(".msg-form__contenteditable");
     if (messageInput && !messageInput.querySelector(".sticky-icon")) {
@@ -42,18 +44,17 @@ const App = () => {
         insertStickyIcon();
       }
     };
-
     const handleFocusOut = (event: FocusEvent) => {
       if (!(event.relatedTarget as Element)?.matches(".sticky-icon")) {
         removeStickyIcon();
       }
     };
-
+    // Add event listeners to show and hide sticky icon
     document.addEventListener("focusin", handleFocusIn);
     document.addEventListener("focusout", handleFocusOut);
 
     return () => {
-      document.removeEventListener("focusin", handleFocusIn);
+      document.removeEventListener("focusin", handleFocusIn); // cleanup
       document.removeEventListener("focusout", handleFocusOut);
     };
   }, []);
