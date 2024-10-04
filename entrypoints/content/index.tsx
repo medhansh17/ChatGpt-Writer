@@ -4,7 +4,7 @@ import App from "./app";
 import "../../assets/main.css";
 
 export default defineContentScript({
-  matches: ["*://*/*"],
+  matches: ["*://*.linkedin.com/*"], // Run on LinkedIn pages only
   cssInjectionMode: "ui", // Inject CSS in the UI layer
   async main(ctx) {
     const ui = await createShadowRootUi(ctx, {
