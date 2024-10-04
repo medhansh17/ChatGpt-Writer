@@ -15,16 +15,19 @@ This Chrome extension assists LinkedIn users by generating responses to messages
 3. **Generate Response**:
    - After entering a command in the modal input field, clicking the "Generate" button displays a dummy response: 
      - `Thank you for the opportunity! If you have any more questions or if there's anything else I can help you with, feel free to ask.`
-   - Prompts longer than 100 characters are truncated, with the option to expand or collapse the prompt.
+   - Prompts over 100 characters are truncated, with the option to expand or collapse the prompt.
 
 4. **Insert Response**:
-   - Clicking the "Insert" button places the generated response directly into the LinkedIn message input field.
+   - The "Insert" button places the generated response directly into the LinkedIn message input field.
    - The "Regenerate" button is non-functional (as this is a demo).
+
+5. **Popup**:
+   - A popup was added that is accessible on all URLs.
 
 ## Edge Cases Handled
 
 - Prompts longer than 100 characters are truncated.
-- The text area in the modal grows dynamically as more text is entered.
+- The text area in the modal grows dynamically till a certain height as more text is entered.
 - The modal closes when clicking outside of it.
 
 ## Technologies Used
@@ -32,3 +35,8 @@ This Chrome extension assists LinkedIn users by generating responses to messages
 - **[WXT Framework](https://wxt.dev/)**: Demonstrates the ability to learn and apply new frameworks quickly.
 - **React with TypeScript**: Provides type-safe, component-based structure.
 - **Tailwind CSS**: Used for efficient, utility-first styling.
+  
+
+
+https://github.com/user-attachments/assets/4261195c-24e7-4a6a-9ef3-3bb52eaa8eb8
+
