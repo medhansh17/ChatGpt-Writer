@@ -15,11 +15,14 @@ This Chrome extension assists LinkedIn users by generating responses to messages
 3. **Generate Response**:
    - After entering a command in the modal input field, clicking the "Generate" button displays a dummy response: 
      - `Thank you for the opportunity! If you have any more questions or if there's anything else I can help you with, feel free to ask.`
-   - Prompts longer than 100 characters are truncated, with the option to expand or collapse the prompt.
+   - Prompts over 100 characters are truncated, with the option to expand or collapse the prompt.
 
 4. **Insert Response**:
-   - Clicking the "Insert" button places the generated response directly into the LinkedIn message input field.
+   - The "Insert" button places the generated response directly into the LinkedIn message input field.
    - The "Regenerate" button is non-functional (as this is a demo).
+
+5. **Popup**:
+   - A popup was added that is accessible on all URLs.
 
 ## Edge Cases Handled
 
